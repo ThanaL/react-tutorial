@@ -4,26 +4,27 @@ import './index.css';
 //import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+class Increm extends React.Component{
 
-function Cartoon(props)
+constructor(props)
 {
-	return <h1> hello , {props.name} </h1>
+	super(props);
+	this.state={ counter : 0};
 }
 
+increment=(e)=>{
+  e.preventDefault();
+	this.setState({ counter : this.state.counter +1});
+}
 
-function Show ()
-{
-      return <div>
-                   <Cartoon name='thana' />
-                   <Cartoon name='labadi' />
-             </div>
+   render(){return  <button href="http://www.google.com" onClick={this.increment}> value is{this.state.counter} </button>}
+
+
+
 
 }
 
-
-
-ReactDOM.render(<Show />, document.getElementById('root'));
-
+ReactDOM.render(<Increm/>, document.getElementById('root'));
 
 
 registerServiceWorker();
