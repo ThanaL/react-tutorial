@@ -4,5 +4,13 @@ import './index.css';
 //import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<h1> hello word, thana labadi </h1>, document.getElementById('root'));
+
+
+
+setInterval(()=>{
+
+ReactDOM.render(<h1>{new Date().toLocaleTimeString()}</h1>, document.getElementById('root'));
+} , 1000)
+
+
 registerServiceWorker();
