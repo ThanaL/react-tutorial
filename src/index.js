@@ -5,12 +5,25 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 
+function Cartoon(props)
+{
+	return <h1> hello , {props.name} </h1>
+}
 
 
-setInterval(()=>{
+function Show ()
+{
+      return <div>
+                   <Cartoon name='thana' />
+                   <Cartoon name='labadi' />
+             </div>
 
-ReactDOM.render(<h1>{new Date().toLocaleTimeString()}</h1>, document.getElementById('root'));
-} , 1000)
+}
+
+
+
+ReactDOM.render(<Show />, document.getElementById('root'));
+
 
 
 registerServiceWorker();
