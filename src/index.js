@@ -4,27 +4,52 @@ import './index.css';
 //import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-class Increm extends React.Component{
-
-constructor(props)
-{
-	super(props);
-	this.state={ counter : 0};
-}
-
-increment=(e)=>{
-  e.preventDefault();
-	this.setState({ counter : this.state.counter +1});
-}
-
-   render(){return  <button href="http://www.google.com" onClick={this.increment}> value is{this.state.counter} </button>}
-
-
+function Change (props){
+ if(props.value){
+ 	return <h1>this is true </h1>
+ }
+ else
+ 	 	return <h1> this is false </h1>
 
 
 }
 
-ReactDOM.render(<Increm/>, document.getElementById('root'));
 
+
+
+
+
+
+class ChangeMeesage extends React.Component {
+   constructor(props)
+	{
+		super(props);
+		this.state ={ value : true};
+	}
+
+
+	handleclick=()=>{
+          
+		this.setState ({
+			value :!this.state.value
+		})
+	}
+
+
+
+	render(){
+		return(
+		<div>
+               <button onClick={this.handleclick} > change the meesage</button>
+
+               <Change value={this.state.value} /> 
+
+
+		</div>)
+	}
+}
+
+
+ReactDOM.render(<ChangeMeesage/>, document.getElementById('root'));
 
 registerServiceWorker();
